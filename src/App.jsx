@@ -1,25 +1,23 @@
+import Home from "./pages/Home";
+import Items from "./pages/Iten";
+import Products from "./pages/products";
+import "./App.css";
+import { Routes, Route, Link as RouterLink } from "react-router-dom";
+import  Header  from "./components/Header";
 
-import Home from "./pages/Home"
-import './App.css'
-import { Routes, Route, Link } from "react-router-dom"
+
 function App() {
-
-
   return (
     <>
-    <nav style={{ display: "flex", gap: 20, marginBottom: 20 }}>
-        <Link to="/">Home</Link>
-        <Link to="/sobre">Sobre</Link>
-        <Link to="/contato">Contato</Link>
-      </nav>
+         <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<Home />} />
-        <Route path="/contato" element={<Home />} />
+        <Route path="/itens" element={<Items />} />
+        <Route path="/contato" element={<Products />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
