@@ -1,3 +1,35 @@
 .page {
- background-color: red;
+ background-color: rgb(222, 222, 222);
+ height: 100%;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
 }
+
+.content {
+    padding-top: 5%;
+
+}
+.messegeTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 3%;
+}
+
+
+.contentItens {
+    margin-top: 3%;
+    margin-left: 3%;
+    display: flex;
+    gap: 2%;
+}
+
+.contentCard {
+ width: 100%;
+ margin-top: 8%;
+ margin-bottom: 8%;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 2%;
+}
+
+
