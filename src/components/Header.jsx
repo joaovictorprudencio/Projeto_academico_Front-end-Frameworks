@@ -7,6 +7,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { styled } from '@mui/material/styles';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -14,6 +15,16 @@ const Header = () => {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+ const navigate = useNavigate();
+
+  const returnForHome = () => {
+      navigate('/')
+  }
+
+  const redirectToCart = () => {
+    navigate('/carrinho')
+}
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -83,7 +94,7 @@ const Header = () => {
       <MenuItem>
         <IconButton aria-label="cart">
           <StyledBadge badgeContent={4} color="secondary">
-            <ShoppingCartIcon />
+            <ShoppingCartIcon  />
           </StyledBadge>
         </IconButton>
         <p>Messages</p>
@@ -125,14 +136,14 @@ const Header = () => {
     >
       <Toolbar>
 
-        <h1>mine food</h1>
+        <h1 onClick={returnForHome}>mine food</h1>
         <Box sx={{ flexGrow: 1 }} />
 
-        {/* Ícones para desktop */}
+        
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent={4} color="error">
-              <ShoppingCartIcon />
+              <ShoppingCartIcon onClick={redirectToCart} />
             </Badge>
           </IconButton>
           <IconButton
@@ -157,7 +168,7 @@ const Header = () => {
           </IconButton>
         </Box>
 
-        {/* Ícone de menu para mobile */}
+
         <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
           <IconButton
             size="large"
